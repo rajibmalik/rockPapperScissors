@@ -1,15 +1,16 @@
-const options = ["rock", "paper", "scissors"];
+let playerScore = 0;
+let computerScore = 0;
 
 const getComputerChoice = () => {
+  const options = ["rock", "paper", "scissors"];
   return options[Math.floor(Math.random() * 3)];
 }
 
 const getPlayerChoice = () => {
-  return prompt("Rock, paper or scissors")
+  return prompt("Rock, paper or scissors").toLowerCase();
 }
 
 const playRound = (playerSelection, computerSelection) => {
-  playerSelection = playerSelection.toLowerCase();
   if (
     playerSelection == "rock" && computerSelection == "scissors" ||
     playerSelection == "scissors" && computerSelection == "paper" ||
@@ -29,18 +30,17 @@ const playRound = (playerSelection, computerSelection) => {
   }
 }
 
-
-
 const declareWinner = () => {
   if (playerScore > computerScore) {
     return "Congratulations, you win"
-  } else {
+  } else if (playerScore == computerScore){
+    return "Draw!"
+  }
+  else {
     return "You lose!"
   }
 }
 
-let playerScore = 0;
-let computerScore = 0;
 
 const game = () => {
   for(let i = 0; i < 5; i++) {
@@ -58,7 +58,6 @@ const game = () => {
 
     playRound(playerSelection, computerSelection);
   } 
-
   return declareWinner();
 }
 
