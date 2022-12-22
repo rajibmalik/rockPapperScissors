@@ -1,29 +1,12 @@
-// console.log("hello world")
-
-// game against computer
-// start with function getComputerChoice
-// randomly returns either "Rock", "Paper", or "Scissors"
-
 const options = ["rock", "paper", "scissors"];
 
 const getComputerChoice = () => {
   return options[Math.floor(Math.random() * 3)];
 }
 
-// console.log(getComputerChoice());
-
-// function that plays a round of rock paper scissors
-// two parameters
-// playerSelection 
-// computerSelection 
-
-// return a string that declares the winner of the round 
-// e.g "You Lose! Paper beats Rock"
-
-// Make playerSelection case-insensitive, user can input rock, ROCK, RocK 
-
-let playerScore = 0;
-let computerScore = 0;
+const getPlayerChoice = () => {
+  return prompt("Rock, paper or scissors")
+}
 
 const playRound = (playerSelection, computerSelection) => {
   playerSelection = playerSelection.toLowerCase();
@@ -46,14 +29,7 @@ const playRound = (playerSelection, computerSelection) => {
   }
 }
 
-// const playerSelection = "rock";
-// const computerSelection = "rock"
 
-// console.log(playRound(playerSelection, computerSelection));
-
-const getPlayerChoice = () => {
-  return prompt("Rock, paper or scissors")
-}
 
 const declareWinner = () => {
   if (playerScore > computerScore) {
@@ -62,6 +38,9 @@ const declareWinner = () => {
     return "You lose!"
   }
 }
+
+let playerScore = 0;
+let computerScore = 0;
 
 const game = () => {
   for(let i = 0; i < 5; i++) {
