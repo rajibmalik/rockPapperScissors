@@ -7,7 +7,8 @@ const getComputerChoice = () => {
 }
 
 const getPlayerChoice = () => {
-  return prompt("Rock, paper or scissors").toLowerCase();
+  let getPlayerChoice = prompt("Rock, paper or scissors?").toLowerCase();
+  return getPlayerChoice;
 }
 
 const playRound = (playerSelection, computerSelection) => {
@@ -40,7 +41,6 @@ const declareWinner = () => {
     return "You lose!"
   }
 }
-
 
 const game = () => {
   for(let i = 0; i < 5; i++) {
